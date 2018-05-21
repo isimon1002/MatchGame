@@ -1,0 +1,60 @@
+@font-face {
+	font-family: "SuperMario3";
+	src: url("assets/SuperMario3.ttf") format("truetype");
+}
+
+body {
+	margin: 20px;
+	background-image: url(assets/clouds.png);
+	font-family: "SuperMario3", monospace;
+}
+
+.grid {
+	max-width: 1300px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.card {
+	position: relative;
+	transition: all .4s linear;
+	transform-style: preserve-3d;
+	margin: 5px;
+}
+
+.card,
+.back,
+.front {
+	height: 200px;
+	width: 200px;
+}
+
+.back,
+.front {
+	position: absolute;
+	backface-visibility: hidden;
+}
+
+.back {
+	z-index: 2;
+	background-image: url(assets/questionblock.png);
+}
+
+.front {
+	transform: rotateY(180deg);
+}
+
+.selected {
+	transform: rotateY(180deg);
+}
+
+.match .front,
+.match .back {
+	background: none;
+}
+
+#matches, #clicks, #youwin {
+	text-align: center;
+}
